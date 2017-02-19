@@ -8,10 +8,16 @@
     <div class="result">
     </div>
     <script>
+      var preserveData = "";
       $.get( "https://crossorigin.me/https://scratch.mit.edu", function( data ) {
         $( ".result" ).html( "\"\"" + data + "\"\"" );
+        preserveData = data;
         alert( "Load was performed." );
       });
+      setTimeout(alertData,1001);
+      function alertData() {
+        alert(preserveData);
+      }
     </script>
   </body>
 </html>
