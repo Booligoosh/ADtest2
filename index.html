@@ -9,7 +9,7 @@
     </div>
     <script>
       $.get( "https://crossorigin.me/https://scratch.mit.edu", function( data ) {
-        $( ".result" ).html( data );
+        $( ".result" ).html( "\"\"" + data + "\"\"" );
         alert( "Load was performed." );
       });
     </script>
