@@ -14,9 +14,10 @@
         preserveData = data;
         alert( "Load was performed." );
       });
-      setTimeout(alertData,1001);
-      function alertData() {
+      setTimeout(useData,1001);
+      function useData() {
         alert(preserveData);
+        $( ".result" ).html(preserveData);
       }
     </script>
   </body>
