@@ -4,19 +4,18 @@
     <script src="/jquery.min.js"></script>
   </head>
   <body>
-      Hello
     <div class="result">
     </div>
     <script>
       var preserveData = "";
-      $.get( "https://crossorigin.me/https://google.com", function( data ) {
+      $.get( "https://cors-anywhere.herokuapp.com/" + prompt("URL to get:"), function( data ) {
         $( ".result" ).html( "\"\"" + data + "\"\"" );
         preserveData = data;
-        alert( "Load was performed." );
+        //alert( "Load was performed." );
       });
       setTimeout(useData,1001);
       function useData() {
-        alert(preserveData);
+        //alert(preserveData);
         $( ".result" ).html(preserveData);
       }
     </script>
