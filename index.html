@@ -8,10 +8,12 @@
     <div class="result">
     </div>
     <script>
-      var url = "/";
+      var url = null;
       if (urlParams.url == undefined) {
-        url = prompt("URL to get:");
-        window.location = window.location.protocol + "//booligoosh.github.io/ADtest/index.html?url=" + url;
+        while (url == null) {
+          url = prompt("URL to get:");
+          window.location = "https://booligoosh.github.io/ADtest/index.html?url=" + url;
+        }
       }
       else {
         url = urlParams.url;
