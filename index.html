@@ -2,13 +2,22 @@
   <head>
     <title>ADtest</title>
     <script src="/jquery.min.js"></script>
+    <script src="/urlParams/urlParams.js"></script>
   </head>
   <body>
     <div class="result">
     </div>
     <script>
+      var url = "/";
+      if (urlParams.url == undefined) {
+        url = prompt("URL to get:");
+        window.location = window.location.protocol + "//booligoosh.github.io/ADtest/index.html?url=" + url;
+      }
+      else {
+        url = urlParams.url;
+      }
       var preserveData = "";
-      $.get( "https://cors-anywhere.herokuapp.com/" + prompt("URL to get:"), function( data ) {
+      $.get( "https://cors-anywhere.herokuapp.com/" + url, function( data ) {
         $( ".result" ).html( "\"\"" + data + "\"\"" );
         preserveData = data;
         //alert( "Load was performed." );
