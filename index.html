@@ -8,6 +8,8 @@
     <div class="result">
     </div>
     <script>
+        var imgs = document.getElementsByTagName('img');
+        var i = 0;
       const toDataURL = url => fetch(url)
         .then(response => response.blob())
         .then(blob => new Promise((resolve, reject) => {
@@ -39,8 +41,6 @@
         setTimeout(addImages,1001);
       }
       function addImages() {
-        var imgs = document.getElementsByTagName('img');
-        var i = 0;
         imgRep()
         
       }
