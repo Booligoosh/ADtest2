@@ -41,7 +41,7 @@
       function addImages() {
         var imgs = document.getElementsByTagName('img');
         for (var i = 0; i < imgs.length; i++) {
-          toDataURL(imgs[i].src)
+          toDataURL('https://cors-anywhere.herokuapp.com/' + imgs[i].src)
             .then(result => imgs[i].src = result)
             .catch(error => console.error(error)); ;
           }
