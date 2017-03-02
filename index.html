@@ -46,10 +46,10 @@
       }
       function imgRep() {
         console.log('hey');
-        toDataURL('https://cors-anywhere.herokuapp.com/' + imgs[i].src)
+        toDataURL('https://cors-anywhere.herokuapp.com/' + imgs[i].src.toString())
           .then(result => imgs[i].src = result)
           .catch(error => console.error(error)); ;
-        i++;
+        i = i + 1;
         if (i < imgs.length) {
           setTimeout(imgRep,1001);
         }
