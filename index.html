@@ -8,6 +8,14 @@
     <div class="result">
     </div>
     <script>
+      const toDataURL = url => fetch(url)
+        .then(response => response.blob())
+        .then(blob => new Promise((resolve, reject) => {
+          var reader = new FileReader();
+          reader.onloadend = () => resolve(reader.result);
+          reader.onerror = reject;
+          reader.readAsDataURL(blob);
+      }));
       var url = null;
       if (urlParams.url == undefined) {
         while (url == null) {
