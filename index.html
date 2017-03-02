@@ -42,10 +42,12 @@
       }
       function imgRep() {
         console.log('hey' + i);
-        img = imgs[i];if(img.src.split('')[0] != 'd'){
-        toDataURL('https://cors-anywhere.herokuapp.com/' + img.src.toString())
-          .then(result => img.src = result)
-          .catch(error => console.error(error)); ;}
+        img = imgs[i];
+        if(img.src.split('')[0] != 'd'){
+          toDataURL('https://cors-anywhere.herokuapp.com/' + img.src.toString())
+            .then(result => img.src = result)
+            .catch(error => console.error(error)); ;
+        }
         i = i + 1;
         if (i < imgs.length) {
           setTimeout(imgRep,10);
@@ -53,7 +55,6 @@
       }
       function addImages() {
         imgRep()
-        
       }
     </script>
   </body>
