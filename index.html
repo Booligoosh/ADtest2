@@ -43,6 +43,9 @@
       function imgRep() {
         console.log('hey' + i);
         img = imgs[i];
+        if(img.srcset != undefined) {
+          img.srcset = '';
+        }
         if(img.src.split('')[0] != 'd'){
           toDataURL('https://cors-anywhere.herokuapp.com/' + img.src.toString())
             .then(result => img.src = result)
