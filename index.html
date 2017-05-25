@@ -7,11 +7,18 @@
         window.location = 'https://i.giphy.com/FQxGUCUEwMUQ8.gif';
       }
       </script>
+    <script>
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker
+                 .register('/sw.js')
+                 .then(function() { console.log("Service Worker Registered"); });
+      }
+    </script>
   </head>
   <body>
     <div class="result">
     </div>
-    <script>
+    <!--<script>
         var imgs = document.getElementsByTagName('img');
         var i = 0;
       const toDataURL = url => fetch(url)
@@ -63,6 +70,6 @@
       function addImages() {
         imgRep()
       }
-    </script>
+    </script>-->
   </body>
 </html>
