@@ -1,4 +1,4 @@
-importScripts('/cache-polyfill.js');
+importScripts('cache-polyfill.js');
 self.addEventListener('install', function(e) {
   e.waitUntil(
     caches.open('iosiconify1').then(function(cache) {
