@@ -23,8 +23,9 @@ self.addEventListener('fetch', function(event) {
 });
 
 function httpGet(theUrl) {
-    var xmlHttp = new XMLHttpRequest();
+    /*var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
     xmlHttp.send( null );
-    return xmlHttp.responseText;
+    return xmlHttp.responseText;*/
+    return(fetch(theUrl));
 }
