@@ -13,7 +13,7 @@ self.addEventListener('fetch', function(event) {
   
   if(parser.host === window.location.host) {
     parser = document.createElement('a');
-    parser.href = toRequest;
+    parser.href = url;
     toRequest = parser.host + toRequest;
   }
   
