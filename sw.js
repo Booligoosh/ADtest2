@@ -14,7 +14,7 @@ self.addEventListener('fetch', function(event) {
   if(parser.host === window.location.host) {
     parser = document.createElement('a');
     parser.href = url;
-    toRequest = parser.host + toRequest;
+    toRequest = parser.protocol + '//' +  parser.host + toRequest;
   }
   
   console.log("toRequest:",toRequest);
