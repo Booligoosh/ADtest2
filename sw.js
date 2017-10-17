@@ -1,13 +1,7 @@
 importScripts('cache-polyfill.js');
-self.addEventListener('install', function(e) {
-  e.waitUntil(
-    caches.open('iosiconify1').then(function(cache) {
-      return cache.addAll([]);
-    })
-  );
-});
 
 self.addEventListener('fetch', function(event) {
-  console.log(event.request.url);
+  console.log(event.request.hostname);
+  console.log(fetch('https://cors-anywhere.herokuapp.com/' + event.request));
   event.respondWith(fetch('https://cors-anywhere.herokuapp.com/' + event.request));
 });
