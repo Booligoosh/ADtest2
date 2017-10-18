@@ -31,7 +31,7 @@ self.addEventListener('fetch', function(event) {
   if (pat.test(toRequest.toString())){
       parser = new URL(toRequest);
   } else {
-    var str = toRequest.replace(parser2.protocol + '//' +  parser2.host,parser3.protocol + '//' +  parser3.host);
+    var str = toRequest.replace('https://booligoosh.github.io/',parser3.protocol + '//' +  parser3.host);
     parser = new URL(str);
   }
   
