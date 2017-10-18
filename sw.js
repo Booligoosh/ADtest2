@@ -23,6 +23,7 @@ self.addEventListener('fetch', function(event) {
   var toRequest = event.request.url;
   console.log("Req:", toRequest);
   
+  var parser2 = new URL(location);
   var parser3 = new URL(url);
   
   var parser;
@@ -30,12 +31,13 @@ self.addEventListener('fetch', function(event) {
   if (pat.test(toRequest.toString())){
       parser = new URL(toRequest);
   } else {
-    parser = new URL(toRequest, parser3.protocol + '//' +  parser3.host);
+    var str = toRequest.replace(parser2.protocol + '//' +  parser2.host,parser3.protocol + '//' +  parser3.host);
+    parser = new URL(str);
   }
   
   
   
-  var parser2 = new URL(location);
+  
   
   if(parser.host === parser2.host) {
     toRequest = parser3.protocol + '//' +  parser3.host + toRequest;
