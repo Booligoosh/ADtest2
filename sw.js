@@ -14,6 +14,9 @@ self.addEventListener('fetch', function(event) {
         location = client.url;
       }
     }
+    
+  console.log("loc2", location)
+    
   var url = new URL(location).searchParams.get('url').toString();
   
   console.log(event.request.hostname);
