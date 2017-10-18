@@ -14,8 +14,6 @@ self.addEventListener('fetch', function(event) {
         location = client.url;
       }
     }
-  });
-
   var url = new URL(location).searchParams.get('url').toString();
   
   console.log(event.request.hostname);
@@ -44,6 +42,7 @@ self.addEventListener('fetch', function(event) {
   console.log("toRequest:",toRequest);
   
   event.respondWith(httpGet('https://cors-anywhere.herokuapp.com/' + toRequest));
+  });
 });
 
 function httpGet(theUrl) {
