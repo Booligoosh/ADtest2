@@ -10,6 +10,9 @@ self.addEventListener('fetch', function(event) {
     for (const client of clients) {
       const clientUrl = new URL(client.url);
       console.log("SO", clientUrl);
+      if(clientUrl.searchParams.keys.length >= 1) {
+        location = clientUrl;
+      }
     }
   });
 
