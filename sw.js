@@ -2,7 +2,7 @@ importScripts('cache-polyfill.js');
 
 self.addEventListener('fetch', function(event) {
 
-  var location = self.registration.scope;
+  var location = self.location;
   
   console.log("loc", location)
 
