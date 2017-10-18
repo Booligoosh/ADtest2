@@ -5,6 +5,13 @@ self.addEventListener('fetch', function(event) {
   var location = self.location;
   
   console.log("loc", location)
+  
+  self.clients.matchAll({includeUncontrolled: true}).then(clients => {
+    for (const client of clients) {
+      const clientUrl = new URL(client.url);
+      console.log("SO", clientUrl);
+    }
+  });
 
   var url = new URL(location).searchParams.get('url').toString();
   
