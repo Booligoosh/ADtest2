@@ -11,7 +11,7 @@ self.addEventListener('fetch', function(event) {
       const clientUrl = new URL(client.url);
       console.log("SO", clientUrl);
       if(clientUrl.searchParams.keys.length >= 1) {
-        location = clientUrl;
+        location = client.url;
       }
     }
   });
