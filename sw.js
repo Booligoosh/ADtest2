@@ -20,7 +20,6 @@ self.addEventListener('fetch', function(event) {
   var url = new URL(location).searchParams.get('url').toString();
   
   console.log(event.request.hostname);
-  console.log(fetch('https://cors-anywhere.herokuapp.com/' + event.request));
   var toRequest = event.request.url;
   console.log("Req:", toRequest);
   
