@@ -28,7 +28,7 @@ self.addEventListener('fetch', function(event) {
   
   var parser;
   var pat = /^https?:\/\//i;
-  if (pat.test(urlString)){
+  if (pat.test(toRequest.toString())){
       parser = new URL(toRequest);
   } else {
     parser = new URL(toRequest, parser3.protocol + '//' +  parser3.host);
