@@ -3,6 +3,8 @@ importScripts('cache-polyfill.js');
 self.addEventListener('fetch', function(event) {
 
   var location = self.registration.scope;
+  
+  console.log("loc", location)
 
   var url = new URL(location).searchParams.get('url').toString();
   
