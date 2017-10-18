@@ -2,7 +2,7 @@ importScripts('cache-polyfill.js');
 
 var location = self.registration.scope;
 
-var url = new URL(location).searchParams.get('url');
+var url = new URL(location).searchParams.get('url').toString();
 
 self.addEventListener('fetch', function(event) {
   console.log(event.request.hostname);
