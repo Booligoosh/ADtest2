@@ -1,10 +1,11 @@
 importScripts('cache-polyfill.js');
 
-var location = self.registration.scope;
-
-var url = new URL(location).searchParams.get('url').toString();
-
 self.addEventListener('fetch', function(event) {
+
+  var location = self.registration.scope;
+
+  var url = new URL(location).searchParams.get('url').toString();
+  
   console.log(event.request.hostname);
   console.log(fetch('https://cors-anywhere.herokuapp.com/' + event.request));
   var toRequest = event.request.url;
