@@ -44,7 +44,7 @@ self.addEventListener('fetch', function(event) {
   
   console.log("toRequest:",toRequest);
   
-  event.respondWith(httpGet('https://cors-anywhere.herokuapp.com/' + toRequest));
+  event.respondWith(httpGet('https://cors-anywhere.herokuapp.com/' + toRequest.href));
   });
 });
 
