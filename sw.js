@@ -32,6 +32,7 @@ self.addEventListener('fetch', function(event) {
       parser = new URL(toRequest);
   } else {
     var str = new URL(toRequest, parser3.protocol + '//' +  parser3.host);
+    console.log(str);
     parser = new URL(str);
   }
   
