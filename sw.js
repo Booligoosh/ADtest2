@@ -36,14 +36,13 @@ self.addEventListener('fetch', function(event) {
   
   console.log("toRequest:",toRequest);
   
-  event.respondWith(httpGet('https://cors-anywhere.herokuapp.com/' + toRequest));
+fetch('https://cors-anywhere.herokuapp.com/' + toRequest).then(response => {
+  if (!response.ok) { // See https://fetch.spec.whatwg.org/#ok-status
+    throw new Error('Invalid HTTP response: ' + response.status);
+  }
+  // Otherwise, do something with the valid response.
+  event.respondWith(response);
+})
+    
   });
 });
-
-function httpGet(theUrl) {
-    /*var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-    xmlHttp.send( null );
-    return xmlHttp.responseText;*/
-    return(fetch(theUrl));
-}
