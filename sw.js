@@ -5,7 +5,7 @@ self.addEventListener('fetch', function(event) {
   var location = self.location;
   
   console.log("loc", location)
-  /*
+  
   self.clients.matchAll({includeUncontrolled: true}).then(clients => {
     for (const client of clients) {
       const clientUrl = new URL(client.url);
@@ -14,7 +14,7 @@ self.addEventListener('fetch', function(event) {
         location = client.url;
       }
     }
-    */
+  
   location = 'https://booligoosh.github.io/ADtest2/index.html?url=https://codetheweb.blog';
   console.log("loc2", location)
     
