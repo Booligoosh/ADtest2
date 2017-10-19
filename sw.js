@@ -15,7 +15,6 @@ self.addEventListener('fetch', function(event) {
       }
     }
   
-  location = 'https://booligoosh.github.io/ADtest2/index.html?url=https://codetheweb.blog';
   console.log("loc2", location)
     
   var url = new URL(location).searchParams.get('url').toString();
