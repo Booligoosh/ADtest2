@@ -26,20 +26,9 @@ self.addEventListener('fetch', function(event) {
   var parser2 = new URL(location);
   var parser3 = new URL(url);
   
-  var parser;
-  var pat = /^https?:\/\//i;
-  if (pat.test(toRequest.toString())){
-      parser = new URL(toRequest);
-  } else {
-    var str = new URL(toRequest, parser3.protocol + '//' +  parser3.host);
-    console.log(str);
-    parser = new URL(str);
-  }
+  var parser = new URL(toRequest);
   
-  
-  
-  
-  
+  console.log("if",parser.host,parser2.host,parser.host === parser2.host);
   if(parser.host === parser2.host) {
     toRequest = toRequest.replace('https://booligoosh.github.io',parser3.protocol + '//' +  parser3.host);
   }
