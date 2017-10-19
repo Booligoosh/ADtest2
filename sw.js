@@ -31,6 +31,7 @@ self.addEventListener('fetch', function(event) {
   console.log("if",parser.host,parser2.host,parser.host === parser2.host);
   if(parser.host === parser2.host) {
     toRequest = toRequest.replace('https://booligoosh.github.io',parser3.protocol + '//' +  parser3.host);
+    console.log("ifdone",toRequest);
   }
   
   console.log("toRequest:",toRequest);
