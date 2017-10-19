@@ -40,7 +40,7 @@ self.addEventListener('fetch', function(event) {
   
   
   if(parser.host === parser2.host) {
-    toRequest = toRequest.replace(parser2.protocol + '//' +  parser2.host,parser3.protocol + '//' +  parser3.host);
+    toRequest = toRequest.replace('htpps://booligoosh.github.io',parser3.protocol + '//' +  parser3.host);
   }
   
   console.log("toRequest:",toRequest);
