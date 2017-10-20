@@ -43,7 +43,10 @@ function doSomethingAsyncThatReturnsAURL(event) {
 }
 
 function doSomethingAsync() {
-      console.log("ASYNC LOL");
+    return new Promise(resolve => {
+        console.log("ASYNC LOL");
+        resolve();
+      })
 }
 
 
