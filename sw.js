@@ -2,13 +2,13 @@ importScripts('cache-polyfill.js');
 
 self.addEventListener('fetch', function(event) {
 
-const promiseChain = doSomethingAsyncThatReturnsAURL()
+const promiseChain = doSomethingAsyncThatReturnsAURL(event)
       .then(someUrl => fetch(someUrl));
 event.respondWith(promiseChain);
 });
 
 
-function doSomethingAsyncThatReturnsAURL() {
+function doSomethingAsyncThatReturnsAURL(event) {
   var location = self.location;
   
   console.log("loc", location)
