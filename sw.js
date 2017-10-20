@@ -2,8 +2,7 @@ importScripts('cache-polyfill.js');
 
 self.addEventListener('fetch', function(event) {
 
-const promiseChain = doSomethingAsync()
-      .then(() => doSomethingAsyncThatReturnsAURL())
+const promiseChain = doSomethingAsyncThatReturnsAURL()
       .then(someUrl => fetch(someUrl));
 event.respondWith(promiseChain);
 });
