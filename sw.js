@@ -43,7 +43,9 @@ function doSomethingAsyncThatReturnsAURL(event) {
   
   console.log("toRequest:",toRequest);
     
-  return('https://cors-anywhere.herokuapp.com/' + toRequest);
+  var finalResult = 'https://cors-anywhere.herokuapp.com/' + toRequest;
+        
+  return finalResult;
   
   });
 }
