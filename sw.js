@@ -49,7 +49,7 @@ function doSomethingAsync() {
 
 
 self.addEventListener('fetch', function(event) {
-  if(!event.request.url.includes("ADtest2") && event.request.url != 'https://booligoosh.github.io/jquery.min.js' && event.request.url != 'https://booligoosh.github.io/urlParams/urlParams.js'){
+  if(!event.request.url.includes("ADtest2") && !event.request.url.includes("cors-anywhere.herokuapp.com") && event.request.url != 'https://booligoosh.github.io/jquery.min.js' && event.request.url != 'https://booligoosh.github.io/urlParams/urlParams.js'){
     console.log("yay!");
 const promiseChain = doSomethingAsync()
       .then(() => doSomethingAsyncThatReturnsAURL(event))
