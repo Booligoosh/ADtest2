@@ -1,14 +1,5 @@
 importScripts('cache-polyfill.js');
 
-self.addEventListener('fetch', function(event) {
-
-const promiseChain = doSomethingAsync()
-      .then(() => doSomethingAsyncThatReturnsAURL(event))
-      .then(someUrl => fetch(someUrl));
-event.respondWith(promiseChain);
-});
-
-
 function doSomethingAsyncThatReturnsAURL(event) {
   var location = self.location;
   
@@ -54,3 +45,12 @@ function doSomethingAsyncThatReturnsAURL(event) {
 function doSomethingAsync() {
       console.log("ASYNC LOL");
 }
+
+
+self.addEventListener('fetch', function(event) {
+
+const promiseChain = doSomethingAsync()
+      .then(() => doSomethingAsyncThatReturnsAURL(event))
+      .then(someUrl => fetch(someUrl));
+event.respondWith(promiseChain);
+});
