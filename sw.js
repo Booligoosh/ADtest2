@@ -51,9 +51,10 @@ function doSomethingAsync() {
 
 
 self.addEventListener('fetch', function(event) {
-
+  if(!event.request.url.contains("ADtest2")){
 const promiseChain = doSomethingAsync()
       .then(() => doSomethingAsyncThatReturnsAURL(event))
       .then(someUrl => fetch(someUrl));
 event.respondWith(promiseChain);
+  }
 });
