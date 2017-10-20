@@ -2,6 +2,14 @@ importScripts('cache-polyfill.js');
 
 self.addEventListener('fetch', function(event) {
 
+const promiseChain = doSomethingAsync()
+      .then(() => doSomethingAsyncThatReturnsAURL())
+      .then(someUrl => fetch(someUrl));
+event.respondWith(promiseChain);
+});
+
+
+function doSomethingAsyncThatReturnsAURL() {
   var location = self.location;
   
   console.log("loc", location)
@@ -35,14 +43,8 @@ self.addEventListener('fetch', function(event) {
   }
   
   console.log("toRequest:",toRequest);
-  
-fetch('https://cors-anywhere.herokuapp.com/' + toRequest).then(response => {
-  if (!response.ok) { // See https://fetch.spec.whatwg.org/#ok-status
-    throw new Error('Invalid HTTP response: ' + response.status);
-  }
-  // Otherwise, do something with the valid response.
-  event.respondWith(response);
-})
     
+  return('https://cors-anywhere.herokuapp.com/' + toRequest);
+  
   });
-});
+}
